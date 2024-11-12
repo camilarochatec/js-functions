@@ -130,7 +130,9 @@ function camCse(nome){
     return nome
     //A função toLowerCase() garante que a string esteja toda em minúsculas.
     .toLowerCase()
-    //O método replace(/_./g, match => match.charAt(1).toUpperCase()) usa uma expressão regular para encontrar os caracteres após os underscores (_) e os transforma em maiúsculos. O primeiro caractere após o underscore é ignorado (ficando minúsculo).
+    //O método replace substitui(/_./g, (g é de global e o match vai procurar o que combina globalmente onde tem o _)
+    // match => match.charAt(1).toUpperCase()) o chart pega na psoição 1 e transforma em upercase.
+    //usa uma expressão regular para encontrar os caracteres após os underscores (_) e os transforma em maiúsculos. O primeiro caractere após o underscore é ignorado (ficando minúsculo).
     .replace (/_./g, match => match.charAt(1).toUpperCase());
 
 } 
