@@ -125,12 +125,15 @@ function camelCase(frase){
     return fraseNova;
 }
 
-//8a)
-function camCse(frase){
-    return frase.replace("_", "" ); 
-    frase= letter.toUpperCase(i[0]);
-    
-}
+//8a) 
+function camCse(nome){
+    return nome
+    //A função toLowerCase() garante que a string esteja toda em minúsculas.
+    .toLowerCase()
+    //O método replace(/_./g, match => match.charAt(1).toUpperCase()) usa uma expressão regular para encontrar os caracteres após os underscores (_) e os transforma em maiúsculos. O primeiro caractere após o underscore é ignorado (ficando minúsculo).
+    .replace (/_./g, match => match.charAt(1).toUpperCase());
+
+} 
 
 document.write(`<h1>A frase snake_case fica assim "${camCse('snake_case')}" em camelCase</h1>`)
 
@@ -149,7 +152,8 @@ document.write(`<h1>Todos os itens do array[2,4,6,8,5] são pares?
     ${todosVerdadeiros([2,4,6,8,5], ' % 2 == 0') ? 'Sim' : 'Não'}</h1>`);
 
 //9a)
-function verd(array){
-    array.every(true)
-
+function verdadeiro(array){
+    return array.every(num => num % 2 == 0);
 }
+document.write(`<h1>Todos os itens do array[2,4,6,8,20] são pares? 
+    ${verdadeiro([2,4,6,8,20])? 'Sim': 'Não'}</h1>`);
